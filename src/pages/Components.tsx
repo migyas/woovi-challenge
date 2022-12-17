@@ -6,6 +6,7 @@ import {
   ToggleButtonGroup,
   Typography,
   Box,
+  Chip,
 } from "@mui/material";
 import {
   CircleOutlined as CircleOutlinedBorder,
@@ -59,6 +60,7 @@ export default function Components() {
   ]);
   const [value, setValue] = useState("");
   const [checked, setChecked] = useState(false);
+  const parcelFirst = parcels[0];
 
   function handleChooseParcel(value: string) {
     setValue(value);
@@ -71,21 +73,20 @@ export default function Components() {
       <br />
       <Box
         style={{
-          maxWidth: "42px",
-          padding: "6px 20px",
-          backgroundColor: "#E5E5E5",
-          borderRadius: "100px",
+          background: "#133A6F",
+          color: "#ffffff",
+          width: "max-content",
+          padding: "6px 30px 6px 10px",
+          borderRadius: "5px",
+          clipPath:
+            "polygon(100% 0, 100% 6%, 96% 52%, 100% 95%, 100% 100%, 0 100%, 0 0)",
         }}
       >
-        <Typography
-          fontSize={18}
-          textAlign="center"
-          fontWeight={800}
-          color="#4D4D4D"
-        >
-          Pix
-        </Typography>
+        🤑 <strong>{maskCurrency(300)}</strong> de volta no seu Pix na hora
       </Box>
+      <br />
+      <br />
+
       {parcels.length > 0 && (
         <>
           <div>
@@ -94,21 +95,208 @@ export default function Components() {
               exclusive
               orientation="vertical"
               onChange={(_, val) => handleChooseParcel(val)}
-              style={{ marginBottom: "30px" }}
+              style={{ marginBottom: "34px", width: "429px" }}
             >
-              {parcels[0] && (
+              {parcelFirst && (
                 <ToggleButton
-                  size="small"
-                  value={parcels[0].value}
-                  selected={value == parcels[0].value.toString()}
+                  key={parcelFirst.id}
+                  value={parcelFirst.value}
+                  selected={value == parcelFirst.value.toString()}
+                  style={{ borderRadius: "10px" }}
                 >
-                  <Typography>{parcels[0].value}</Typography>
-                  <Checkbox
-                    icon={<CircleOutlinedBorder />}
-                    checkedIcon={<CircleOutlinedIcon />}
-                    checked={value == parcels[0].value.toString()}
-                    color="success"
-                  />
+                  <Box
+                    style={{
+                      position: "absolute",
+                      top: "-15px",
+                      left: "20px",
+                    }}
+                  >
+                    <Chip
+                      color="info"
+                      label={
+                        <Typography
+                          fontSize={18}
+                          textAlign="center"
+                          fontWeight={800}
+                          color="#4D4D4D"
+                          textTransform="capitalize"
+                        >
+                          Pix
+                        </Typography>
+                      }
+                    />
+                  </Box>
+                  <Box
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      height: "137px",
+                      maxWidth: "429px",
+                      width: "100%",
+                      gap: "7px",
+                      padding: "0 20px",
+                    }}
+                  >
+                    <Box
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Box
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Box style={{ display: "flex", gap: "10px" }}>
+                          <Typography
+                            fontSize={24}
+                            fontWeight={800}
+                            color="#4D4D4D"
+                          >
+                            {parcels[0].id}x
+                          </Typography>
+                          <Typography
+                            fontSize={24}
+                            fontWeight={600}
+                            color="#4D4D4D"
+                          >
+                            {maskCurrency(parcels[0].value)}
+                          </Typography>
+                        </Box>
+                        <Typography
+                          fontWeight={600}
+                          color="#03D69D"
+                          textAlign="start"
+                          textTransform="capitalize"
+                        >
+                          Ganhe <strong>3%</strong> de Cashback
+                        </Typography>
+                      </Box>
+                      <Box>
+                        <Checkbox
+                          icon={<CircleOutlinedBorder />}
+                          checkedIcon={<CircleOutlinedIcon />}
+                          checked={value == parcelFirst.value.toString()}
+                          color="success"
+                        />
+                      </Box>
+                    </Box>
+                    <Box
+                      style={{
+                        background: "#133A6F",
+                        textTransform: "none",
+                        color: "#ffffff",
+                        textAlign: "start",
+                        padding: "6px 0 6px 10px",
+                        borderRadius: "5px",
+                        width: "98%",
+                        clipPath:
+                          "polygon(100% 0, 100% 6%, 96% 52%, 100% 95%, 100% 100%, 0 100%, 0 0)",
+                      }}
+                    >
+                      <Typography fontSize={16}>
+                        🤑 <strong>{maskCurrency(300)}</strong> de volta no seu
+                        Pix na hora
+                      </Typography>
+                    </Box>
+                  </Box>
+                  {/* <Box
+                    style={{
+                      position: "absolute",
+                      top: "-15px",
+                      left: "20px",
+                    }}
+                  >
+                    <Chip
+                      color="info"
+                      label={
+                        <Typography
+                          fontSize={18}
+                          textAlign="center"
+                          fontWeight={800}
+                          color="#4D4D4D"
+                          textTransform="capitalize"
+                        >
+                          Pix
+                        </Typography>
+                      }
+                    />
+                  </Box>
+                  <Box
+                    style={{
+                      display: "flex",
+                      maxWidth: "429px",
+                      width: "max-content",
+                      height: "137px",
+                      justifyContent: "space-between",
+                      position: "relative",
+                    }}
+                  >
+                    <Box
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        padding: "28px 20px 22px 20px",
+                      }}
+                    >
+                      <Box style={{ display: "flex", gap: "10px" }}>
+                        <Typography
+                          fontSize={24}
+                          fontWeight={800}
+                          color="#4D4D4D"
+                        >
+                          {parcels[0].id}x
+                        </Typography>
+                        <Typography
+                          fontSize={24}
+                          fontWeight={600}
+                          color="#4D4D4D"
+                        >
+                          {maskCurrency(parcels[0].value)}
+                        </Typography>
+                      </Box>
+                      <Typography
+                        fontWeight={600}
+                        color="#03D69D"
+                        textAlign="start"
+                        textTransform="capitalize"
+                      >
+                        Ganhe <strong>3%</strong> de Cashback
+                      </Typography>
+
+                      <Box style={{ marginTop: "23px", marginRight: "22px" }}>
+                        <Checkbox
+                          icon={<CircleOutlinedBorder />}
+                          checkedIcon={<CircleOutlinedIcon />}
+                          checked={value == parcels[0].value.toString()}
+                          color="success"
+                        />
+                      </Box>
+                    </Box>
+                    <Box
+                      style={{
+                        background: "#133A6F",
+                        color: "#ffffff",
+                        width: "max-content",
+                        textAlign: "start",
+                        padding: "6px 0 6px 10px",
+                        textTransform: "none",
+                        borderRadius: "5px",
+                        clipPath:
+                          "polygon(100% 0, 100% 6%, 96% 52%, 100% 95%, 100% 100%, 0 100%, 0 0)",
+                      }}
+                    >
+                      <Typography fontSize={16}>
+                        🤑 <strong>{maskCurrency(300)}</strong> de volta no seu
+                        Pix na hora
+                      </Typography>
+                    </Box>
+                  </Box> */}
                 </ToggleButton>
               )}
             </ToggleButtonGroup>
@@ -134,25 +322,25 @@ export default function Components() {
                     >
                       <Box
                         style={{
-                          alignItems: "center",
-                          padding: "1px 20px",
-                          backgroundColor: "#E5E5E5",
-                          borderRadius: "100px",
                           position: "absolute",
                           top: "-15px",
                           left: "20px",
-                          width: "max-content",
                         }}
                       >
-                        <Typography
-                          fontSize={18}
-                          textAlign="center"
-                          fontWeight={800}
-                          color="#4D4D4D"
-                          textTransform="capitalize"
-                        >
-                          Pix Parcelado
-                        </Typography>
+                        <Chip
+                          color="info"
+                          label={
+                            <Typography
+                              fontSize={18}
+                              textAlign="center"
+                              fontWeight={800}
+                              color="#4D4D4D"
+                              textTransform="capitalize"
+                            >
+                              Pix Parcelado
+                            </Typography>
+                          }
+                        />
                       </Box>
                       <Box
                         style={{
@@ -202,9 +390,93 @@ export default function Components() {
                             icon={<CircleOutlinedBorder />}
                             checkedIcon={<CircleOutlinedIcon />}
                             checked={value == parcel.value.toString()}
-                            onChange={(_, checked) => setChecked(checked)}
                             color="success"
                           />
+                        </Box>
+                      </Box>
+                    </ToggleButton>
+                  );
+                }
+
+                if (parcel.betterChoice) {
+                  return (
+                    <ToggleButton key={parcel.id} value={parcel.value}>
+                      <Box
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          height: "137px",
+                          maxWidth: "429px",
+                          width: "100%",
+                          gap: "7px",
+                          padding: "0 20px",
+                        }}
+                      >
+                        <Box
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <Box
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Box style={{ display: "flex", gap: "10px" }}>
+                              <Typography
+                                fontSize={24}
+                                fontWeight={800}
+                                color="#4D4D4D"
+                              >
+                                {parcel.id}x
+                              </Typography>
+                              <Typography
+                                fontSize={24}
+                                fontWeight={600}
+                                color="#4D4D4D"
+                              >
+                                {maskCurrency(parcel.value)}
+                              </Typography>
+                            </Box>
+                            <Typography
+                              fontWeight={600}
+                              color="#AFAFAF"
+                              textAlign="start"
+                              textTransform="capitalize"
+                            >
+                              Total: {maskCurrency(parcel.total)}
+                            </Typography>
+                          </Box>
+                          <Box>
+                            <Checkbox
+                              icon={<CircleOutlinedBorder />}
+                              checkedIcon={<CircleOutlinedIcon />}
+                              checked={value == parcel.value.toString()}
+                              color="success"
+                            />
+                          </Box>
+                        </Box>
+                        <Box
+                          style={{
+                            background: "#133A6F",
+                            textTransform: "none",
+                            color: "#ffffff",
+                            textAlign: "start",
+                            padding: "6px 0 6px 10px",
+                            borderRadius: "5px",
+                            width: "98%",
+                            clipPath:
+                              "polygon(100% 0, 100% 6%, 96% 52%, 100% 95%, 100% 100%, 0 100%, 0 0)",
+                          }}
+                        >
+                          <Typography fontSize={16}>
+                            <strong>3% de juros:</strong> Melhor opção de
+                            parcelamento
+                          </Typography>
                         </Box>
                       </Box>
                     </ToggleButton>
@@ -263,7 +535,6 @@ export default function Components() {
                           checkedIcon={<CircleOutlinedIcon />}
                           checked={value == parcel.value.toString()}
                           color="success"
-                          onChange={(_, checked) => setChecked(checked)}
                         />
                       </Box>
                     </Box>

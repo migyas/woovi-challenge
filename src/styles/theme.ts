@@ -5,6 +5,9 @@ const theme = createTheme({
     fontFamily: "'Nunito', sans-serif",
   },
   palette: {
+    info: {
+      main: "#E5E5E5",
+    },
     success: {
       main: "#03D69D",
     },
