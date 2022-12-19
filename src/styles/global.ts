@@ -8,5 +8,6 @@ export const globalStyles = css`
 
   html {
     font-family: "Nunito", sans-serif;
+    font-size: 62.5%;
   }
 `;

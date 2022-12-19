@@ -38,10 +38,21 @@ module.exports = {
           loader: "file-loader",
         },
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
   },
   devServer: {
     devMiddleware: {

@@ -10,14 +10,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "baseUrl": "src",
-    "paths": {
-      "@/*": [
-        "*"
-      ],
-    },
     "allowJs": true,
     "resolveJsonModule": true,
+    "baseUrl": "src",
   },
   "exclude": [
     "node_modules"
