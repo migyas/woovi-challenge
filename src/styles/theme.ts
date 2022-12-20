@@ -9,7 +9,6 @@ const theme = createTheme({
       fontWeight: 800,
       lineHeight: "33px",
       color: "#4D4D4D",
-      marginBottom: "3.2rem",
     },
   },
   palette: {
@@ -21,11 +20,25 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          color: "#E5E5E5",
+        },
+      },
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
           padding: 0,
           textTransform: "none",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          padding: 0,
         },
       },
     },
@@ -57,11 +70,13 @@ const theme = createTheme({
         root: {
           background: "#133A6F",
           color: "#ffffff",
-          fontSize: "1.125rem",
+          fontSize: "1.8rem",
           fontWeight: 600,
+          height: "3.9rem",
           padding: "0.438rem 1.25rem",
           lineHeight: "1.534rem",
           borderRadius: 8,
+          textTransform: "none",
 
           ":hover": {
             background: "#133A9F",
@@ -83,6 +98,7 @@ const theme = createTheme({
               border: "2px solid #03D69D !important",
             },
           },
+
           ":hover": {
             background: "#F4FBF9",
             border: "1px solid #bdbdbd !important",

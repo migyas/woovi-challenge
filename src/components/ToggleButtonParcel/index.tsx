@@ -11,8 +11,8 @@ import {
   CircleOutlined as CircleOutlinedBorder,
   CheckCircle as CircleOutlinedIcon,
 } from "@mui/icons-material/";
-import { maskCurrency } from "../../utils/maskCurrency";
-import FeatureMark from "../../components/FeatureMark";
+import { maskCurrency } from "@/utils/maskCurrency";
+import FeatureMark from "@/components/FeatureMark";
 
 interface ToggleButtonParcelProps {
   parcels: any[];

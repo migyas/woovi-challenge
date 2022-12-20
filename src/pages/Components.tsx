@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
 
-import Timeline from "../components/Timeline";
-import { mockParcelsRemaining } from "../utils/mocks";
-import FeatureMark from "../components/FeatureMark";
-import ToggleButtonParcel from "../components/ToggleButtonParcel";
+import Timeline from "@/components/Timeline";
+import { mockParcelsRemaining } from "@/utils/mocks";
+import FeatureMark from "@/components/FeatureMark";
+import ToggleButtonParcel from "@/components/ToggleButtonParcel";
 
 export default function Components() {
   return (

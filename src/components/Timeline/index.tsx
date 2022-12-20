@@ -1,12 +1,13 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
-import { maskCurrency } from "../../utils/maskCurrency";
+import { maskCurrency } from "@/utils/maskCurrency";
 
 interface TimelineProps {
   items?: any[];
 }
 
 export default function Timeline({ items }: TimelineProps) {
+  if (!items) return;
   const lastItem = items.length - 1;
 
   return (
@@ -14,10 +15,11 @@ export default function Timeline({ items }: TimelineProps) {
       {items.length > 0 &&
         items.map((item, i) => {
           return (
-            <Box
+            <Grid
               key={item.id}
               style={{
                 display: "flex",
+                minWidth: "42.7rem",
                 width: "max-content",
                 justifyContent: "space-between",
               }}
@@ -56,7 +58,10 @@ export default function Timeline({ items }: TimelineProps) {
                         width: "12px",
                         height: "12px",
                         borderRadius: "50%",
-                        border: "2px solid #03D69D",
+                        border:
+                          item.checked || !(lastItem === i)
+                            ? "2px solid #03D69D"
+                            : "2px solid #E5E5E5",
                       }}
                     />
                   )}
@@ -71,18 +76,32 @@ export default function Timeline({ items }: TimelineProps) {
                     />
                   )}
                 </Box>
-                <Typography fontSize={18} style={{ marginTop: "-6px" }}>
-                  1ª entrada no Pix
-                </Typography>
+                {lastItem === i ? (
+                  <Typography
+                    fontSize={18}
+                    fontWeight={600}
+                    style={{ marginTop: "-6px", color: "#4D4D4D" }}
+                  >
+                    2ª no cartão
+                  </Typography>
+                ) : (
+                  <Typography
+                    fontSize={18}
+                    fontWeight={600}
+                    style={{ marginTop: "-6px", color: "#4D4D4D" }}
+                  >
+                    1ª entrada no Pix
+                  </Typography>
+                )}
               </Box>
               <Typography
                 fontSize={18}
                 fontWeight={800}
-                style={{ marginTop: "-6px" }}
+                style={{ marginTop: "-6px", color: "#4D4D4D" }}
               >
                 {maskCurrency(item.value)}
               </Typography>
-            </Box>
+            </Grid>
           );
         })}
     </>

@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { maskCurrency } from "../../utils/maskCurrency";
+import { maskCurrency } from "@/utils/maskCurrency";
 
 interface FeatureMarkProps {
   emoticon?: boolean;

@@ -53,6 +53,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
+    alias: {
+      "@": path.join(__dirname, "src"),
+    },
   },
   devServer: {
     devMiddleware: {
