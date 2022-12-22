@@ -2,7 +2,6 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const RedirectWebpackPlugin = require("redirect-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -15,12 +14,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
     new FaviconsWebpackPlugin({ logo: "./public/assets/logo-favicon.svg" }),
-    new RedirectWebpackPlugin({
-      redirects: {
-        parcels: "/payment-parcel/",
-        registercard: "/register-card",
-      },
-    }),
   ],
   module: {
     rules: [
