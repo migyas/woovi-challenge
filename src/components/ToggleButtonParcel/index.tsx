@@ -124,6 +124,12 @@ export default function ToggleButtonParcel({
                           icon={<CircleOutlinedBorder />}
                           checkedIcon={<CircleOutlinedIcon />}
                           checked={value == parcelFirst.value.toString()}
+                          style={{
+                            color:
+                              value == parcelFirst.value.toString()
+                                ? ""
+                                : "#E5E5E5",
+                          }}
                           color="success"
                         />
                       </Box>
@@ -209,6 +215,12 @@ export default function ToggleButtonParcel({
                               icon={<CircleOutlinedBorder />}
                               checkedIcon={<CircleOutlinedIcon />}
                               checked={value == parcel.value.toString()}
+                              style={{
+                                color:
+                                  value == parcel.value.toString()
+                                    ? ""
+                                    : "#E5E5E5",
+                              }}
                               color="success"
                             />
                           </Box>
@@ -297,6 +309,10 @@ export default function ToggleButtonParcel({
                           icon={<CircleOutlinedBorder />}
                           checkedIcon={<CircleOutlinedIcon />}
                           checked={value == parcel.value.toString()}
+                          style={{
+                            color:
+                              value == parcel.value.toString() ? "" : "#E5E5E5",
+                          }}
                           color="success"
                         />
                       </Box>

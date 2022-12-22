@@ -119,7 +119,6 @@ const theme = createTheme({
             width: "26px",
             height: "26px",
             marginTop: "5px",
-            color: "#E5E5E5",
           },
         },
       },

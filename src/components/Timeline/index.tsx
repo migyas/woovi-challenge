@@ -20,11 +20,10 @@ export default function Timeline({ items }: TimelineProps) {
               style={{
                 display: "flex",
                 minWidth: "42.7rem",
-                width: "max-content",
                 justifyContent: "space-between",
               }}
             >
-              <Box style={{ display: "flex", gap: "8px", minWidth: "300px" }}>
+              <Box style={{ display: "flex", gap: "8px" }}>
                 <Box
                   style={{
                     display: "flex",
