@@ -105,7 +105,7 @@ export default function RegisterCard() {
                     {...register("CVV", { required: "Campo obrigátorio" })}
                     label="CVV"
                     onChange={(e) =>
-                      setValue("CVV", mask(e.target.value, ["9999"]))
+                      setValue("CVV", mask(e.target.value, ["999"]))
                     }
                     placeholder="CVV"
                     error={!!errors.CVV}
