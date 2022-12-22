@@ -14,7 +14,7 @@ import { formatDate } from "@/utils/formatDate";
 import Timeline from "@/components/Timeline";
 import { mockParcelsRemaining } from "@/utils/mocks";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-const copyIcon = require("@/assets/copy.svg") as string;
+const copyIcon = require("@/assets/icons/copy.svg") as string;
 
 export default function PaymentFirstParcel() {
   const [editingParams] = useState<PixParams>({
