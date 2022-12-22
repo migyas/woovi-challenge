@@ -5,7 +5,8 @@
   "main": "src",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "build:netlify": "webpack --mode production && echo '/* /index.html 200' | cat >dist/_redirects"
   },
   "dependencies": {
     "@babel/cli": "^7.19.3",
