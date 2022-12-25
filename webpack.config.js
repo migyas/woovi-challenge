@@ -1,25 +1,25 @@
-const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   output: {
-    filename: "bundle-[hash].js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
+    filename: 'bundle-[hash].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: "./public/index.html" }),
-    new FaviconsWebpackPlugin({ logo: "./public/assets/logo-favicon.svg" }),
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new FaviconsWebpackPlugin({ logo: './public/assets/logo-favicon.svg' }),
   ],
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
@@ -27,24 +27,24 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "style-loader",
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
           },
         ],
       },
       {
         test: /.*\.(gif|png|jpe?g)$/i,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
         },
       },
       {
         test: /\.svg$/,
         use: [
           {
-            loader: "svg-url-loader",
+            loader: 'svg-url-loader',
             options: {
               limit: 10000,
             },
@@ -54,9 +54,9 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      "@": path.join(__dirname, "src"),
+      '@': path.join(__dirname, 'src'),
     },
   },
   devServer: {
@@ -64,7 +64,7 @@ module.exports = {
       writeToDisk: true,
     },
     static: {
-      directory: "./public",
+      directory: './public',
     },
     historyApiFallback: true,
     port: 8080,

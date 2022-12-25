@@ -1,7 +1,7 @@
-import { Grid, Typography } from "@mui/material";
-import { useState } from "react";
-import ToggleButtonParcel from "@/components/ToggleButtonParcel";
-import { mockParcels } from "@/utils/mocks";
+import { Grid, Typography } from '@mui/material';
+import { useState } from 'react';
+import ToggleButtonParcel from '@/components/ToggleButtonParcel';
+import { mockParcels } from '@/utils/mocks';
 
 export default function NegociationParcels() {
   const [parcels] = useState(mockParcels);

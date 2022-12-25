@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
 export interface RouteConfig {
   element: React.FC<any>;
@@ -9,19 +9,19 @@ export interface RouteConfig {
 
 export const routes: RouteConfig[] = [
   {
-    path: "/",
-    element: lazy(() => import("@/pages/NegociationParcels")),
+    path: '/',
+    element: lazy(() => import('@/pages/NegociationParcels')),
     useSuspenseLoader: true,
     isIndex: true,
   },
   {
-    path: "/payment-parcel",
-    element: lazy(() => import("@/pages/PaymentFirstParcel")),
+    path: '/payment-parcel',
+    element: lazy(() => import('@/pages/PaymentFirstParcel')),
     useSuspenseLoader: true,
   },
   {
-    path: "/register-card",
-    element: lazy(() => import("@/pages/RegisterCard")),
+    path: '/register-card',
+    element: lazy(() => import('@/pages/RegisterCard')),
     useSuspenseLoader: true,
   },
 ];

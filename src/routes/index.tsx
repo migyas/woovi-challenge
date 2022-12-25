@@ -1,14 +1,13 @@
-import Layout from "../components/Layout";
-// import Components from "@/pages/Components";
-import { Routes as Switch, Route } from "react-router-dom";
-import { routes } from "./routes";
-import PageNotFound from "../pages/404";
+import Layout from '../components/Layout';
+import { Routes as Switch, Route } from 'react-router-dom';
+import { routes } from './routes';
+import PageNotFound from '../pages/404';
 
 export default function Routes() {
   return (
     <Switch>
       <Route path="/" element={<Layout />}>
-        {routes.map((route) =>
+        {routes.map(route =>
           route.isIndex ? (
             <Route key={route.path} index element={<route.element />} />
           ) : (
@@ -17,7 +16,7 @@ export default function Routes() {
               path={route.path}
               element={<route.element />}
             />
-          )
+          ),
         )}
         <Route path="*" element={<PageNotFound />} />
       </Route>

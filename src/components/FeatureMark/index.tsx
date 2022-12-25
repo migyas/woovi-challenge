@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import { maskCurrency } from "@/utils/maskCurrency";
+import { Box, Typography } from '@mui/material';
+import { maskCurrency } from '@/utils/maskCurrency';
 
 interface FeatureMarkProps {
   emoticon?: boolean;
@@ -17,21 +17,21 @@ export default function FeatureMark({
   return (
     <Box
       style={{
-        background: "#133A6F",
-        textTransform: "none",
-        color: "#ffffff",
-        textAlign: "start",
-        padding: "6px 0 6px 8px",
-        borderRadius: "5px",
+        background: '#133A6F',
+        textTransform: 'none',
+        color: '#ffffff',
+        textAlign: 'start',
+        padding: '6px 0 6px 8px',
+        borderRadius: '5px',
         clipPath:
-          "polygon(100% 0, 100% 6%, 96% 52%, 100% 95%, 100% 100%, 0 100%, 0 0)",
+          'polygon(100% 0, 100% 6%, 96% 52%, 100% 95%, 100% 100%, 0 100%, 0 0)',
       }}
     >
       <Typography fontSize={16}>
-        {emoticon && "🤑"}{" "}
+        {emoticon && '🤑'}{' '}
         {firstParcel ? (
           <>
-            <strong>{maskCurrency(value! * 0.03) || "R$ 0"}</strong> de volta no
+            <strong>{maskCurrency(value! * 0.03) || 'R$ 0'}</strong> de volta no
             seu Pix na hora
           </>
         ) : (

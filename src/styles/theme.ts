@@ -1,29 +1,29 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
 const theme = createTheme({
   typography: {
     fontFamily: "'Nunito', sans-serif",
     htmlFontSize: 10,
     h1: {
-      fontSize: "2.4rem",
+      fontSize: '2.4rem',
       fontWeight: 800,
-      lineHeight: "33px",
-      color: "#4D4D4D",
+      lineHeight: '33px',
+      color: '#4D4D4D',
     },
   },
   palette: {
     info: {
-      main: "#E5E5E5",
+      main: '#E5E5E5',
     },
     success: {
-      main: "#03D69D",
+      main: '#03D69D',
     },
   },
   components: {
     MuiDivider: {
       styleOverrides: {
         root: {
-          color: "#E5E5E5",
+          color: '#E5E5E5',
         },
       },
     },
@@ -31,7 +31,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           padding: 0,
-          textTransform: "none",
+          textTransform: 'none',
         },
       },
     },
@@ -45,22 +45,22 @@ const theme = createTheme({
     MuiChip: {
       styleOverrides: {
         root: {
-          padding: "0 0.95rem",
-          height: "100%",
+          padding: '0 0.95rem',
+          height: '100%',
         },
       },
     },
     MuiContainer: {
       styleOverrides: {
         root: {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
 
-          "& img": {
-            paddingTop: "2.9rem",
-            paddingBottom: "2.5rem",
+          '& img': {
+            paddingTop: '2.9rem',
+            paddingBottom: '2.5rem',
           },
         },
       },
@@ -68,18 +68,18 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          background: "#133A6F",
-          color: "#ffffff",
-          fontSize: "1.8rem",
+          background: '#133A6F',
+          color: '#ffffff',
+          fontSize: '1.8rem',
           fontWeight: 600,
-          height: "3.9rem",
-          padding: "0.438rem 1.25rem",
-          lineHeight: "1.534rem",
+          height: '3.9rem',
+          padding: '0.438rem 1.25rem',
+          lineHeight: '1.534rem',
           borderRadius: 8,
-          textTransform: "none",
+          textTransform: 'none',
 
-          ":hover": {
-            background: "#133A9F",
+          ':hover': {
+            background: '#133A9F',
           },
         },
       },
@@ -89,19 +89,19 @@ const theme = createTheme({
         root: {
           padding: 0,
 
-          "&.Mui-selected": {
-            background: "#F4FBF9",
-            border: "2px solid #03D69D !important",
+          '&.Mui-selected': {
+            background: '#F4FBF9',
+            border: '2px solid #03D69D !important',
 
-            ":hover": {
-              background: "#d2f6ec",
-              border: "2px solid #03D69D !important",
+            ':hover': {
+              background: '#d2f6ec',
+              border: '2px solid #03D69D !important',
             },
           },
 
-          ":hover": {
-            background: "#F4FBF9",
-            border: "1px solid #bdbdbd !important",
+          ':hover': {
+            background: '#F4FBF9',
+            border: '1px solid #bdbdbd !important',
           },
         },
       },
@@ -111,14 +111,14 @@ const theme = createTheme({
         root: {
           padding: 0,
 
-          "&.MuiCheckbox-root input": {
+          '&.MuiCheckbox-root input': {
             zIndex: -1,
           },
 
-          "&.MuiCheckbox-root svg": {
-            width: "26px",
-            height: "26px",
-            marginTop: "5px",
+          '&.MuiCheckbox-root svg': {
+            width: '26px',
+            height: '26px',
+            marginTop: '5px',
           },
         },
       },

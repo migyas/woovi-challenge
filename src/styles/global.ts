@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
 export const globalStyles = css`
   * {
@@ -7,7 +7,7 @@ export const globalStyles = css`
   }
 
   html {
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 62.5%;
   }
 `;

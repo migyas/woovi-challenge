@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Box,
   Chip,
@@ -6,13 +6,13 @@ import {
   Typography,
   Checkbox,
   ToggleButton,
-} from "@mui/material";
+} from '@mui/material';
 import {
   CircleOutlined as CircleOutlinedBorder,
   CheckCircle as CircleOutlinedIcon,
-} from "@mui/icons-material/";
-import { maskCurrency } from "@/utils/maskCurrency";
-import FeatureMark from "@/components/FeatureMark";
+} from '@mui/icons-material/';
+import { maskCurrency } from '@/utils/maskCurrency';
+import FeatureMark from '@/components/FeatureMark';
 
 interface ToggleButtonParcelProps {
   parcels: any[];
@@ -21,7 +21,7 @@ interface ToggleButtonParcelProps {
 export default function ToggleButtonParcel({
   parcels,
 }: ToggleButtonParcelProps) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const parcelFirst = parcels[0];
 
   function handleChooseParcel(value: string) {
@@ -38,20 +38,20 @@ export default function ToggleButtonParcel({
               exclusive
               orientation="vertical"
               onChange={(_, val) => handleChooseParcel(val)}
-              style={{ marginBottom: "34px", width: "429px" }}
+              style={{ marginBottom: '34px', width: '429px' }}
             >
               {parcelFirst && (
                 <ToggleButton
                   key={parcelFirst.id}
                   value={parcelFirst.value}
                   selected={value == parcelFirst.value.toString()}
-                  style={{ borderRadius: "10px" }}
+                  style={{ borderRadius: '10px' }}
                 >
                   <Box
                     style={{
-                      position: "absolute",
-                      top: "-15px",
-                      left: "20px",
+                      position: 'absolute',
+                      top: '-15px',
+                      left: '20px',
                     }}
                   >
                     <Chip
@@ -71,30 +71,30 @@ export default function ToggleButtonParcel({
                   </Box>
                   <Box
                     style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      height: "137px",
-                      maxWidth: "429px",
-                      width: "100%",
-                      gap: "7px",
-                      padding: "0 20px",
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      height: '137px',
+                      maxWidth: '429px',
+                      width: '100%',
+                      gap: '7px',
+                      padding: '0 20px',
                     }}
                   >
                     <Box
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
+                        display: 'flex',
+                        justifyContent: 'space-between',
                       }}
                     >
                       <Box
                         style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
                         }}
                       >
-                        <Box style={{ display: "flex", gap: "5px" }}>
+                        <Box style={{ display: 'flex', gap: '5px' }}>
                           <Typography
                             fontSize={24}
                             fontWeight={800}
@@ -127,8 +127,8 @@ export default function ToggleButtonParcel({
                           style={{
                             color:
                               value == parcelFirst.value.toString()
-                                ? ""
-                                : "#E5E5E5",
+                                ? ''
+                                : '#E5E5E5',
                           }}
                           color="success"
                         />
@@ -149,11 +149,11 @@ export default function ToggleButtonParcel({
               exclusive
               value={value}
               orientation="vertical"
-              style={{ marginBottom: "30px" }}
+              style={{ marginBottom: '30px' }}
               onChange={(_, val) => handleChooseParcel(val)}
             >
-              {parcels.map((parcel) => {
-                if (parcel.id === "1") {
+              {parcels.map(parcel => {
+                if (parcel.id === '1') {
                   return;
                 }
 
@@ -162,30 +162,30 @@ export default function ToggleButtonParcel({
                     <ToggleButton key={parcel.id} value={parcel.value}>
                       <Box
                         style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
-                          height: "137px",
-                          maxWidth: "429px",
-                          width: "100%",
-                          gap: "7px",
-                          padding: "0 20px",
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          height: '137px',
+                          maxWidth: '429px',
+                          width: '100%',
+                          gap: '7px',
+                          padding: '0 20px',
                         }}
                       >
                         <Box
                           style={{
-                            display: "flex",
-                            justifyContent: "space-between",
+                            display: 'flex',
+                            justifyContent: 'space-between',
                           }}
                         >
                           <Box
                             style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
+                              display: 'flex',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
                             }}
                           >
-                            <Box style={{ display: "flex", gap: "5px" }}>
+                            <Box style={{ display: 'flex', gap: '5px' }}>
                               <Typography
                                 fontSize={24}
                                 fontWeight={800}
@@ -218,8 +218,8 @@ export default function ToggleButtonParcel({
                               style={{
                                 color:
                                   value == parcel.value.toString()
-                                    ? ""
-                                    : "#E5E5E5",
+                                    ? ''
+                                    : '#E5E5E5',
                               }}
                               color="success"
                             />
@@ -235,15 +235,15 @@ export default function ToggleButtonParcel({
                     key={parcel.id}
                     value={parcel.value}
                     style={{
-                      borderRadius: parcel.id === "2" && "10px 10px 0 0",
+                      borderRadius: parcel.id === '2' && '10px 10px 0 0',
                     }}
                   >
-                    {parcel.id === "2" && (
+                    {parcel.id === '2' && (
                       <Box
                         style={{
-                          position: "absolute",
-                          top: "-15px",
-                          left: "20px",
+                          position: 'absolute',
+                          top: '-15px',
+                          left: '20px',
                         }}
                       >
                         <Chip
@@ -264,21 +264,21 @@ export default function ToggleButtonParcel({
                     )}
                     <Box
                       style={{
-                        display: "flex",
-                        width: "429px",
-                        height: parcel.id === "2" && "105px",
-                        justifyContent: "space-between",
+                        display: 'flex',
+                        width: '429px',
+                        height: parcel.id === '2' && '105px',
+                        justifyContent: 'space-between',
                       }}
                     >
                       <Box
                         style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
-                          padding: "20px",
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          padding: '20px',
                         }}
                       >
-                        <Box style={{ display: "flex", gap: "5px" }}>
+                        <Box style={{ display: 'flex', gap: '5px' }}>
                           <Typography
                             fontSize={24}
                             fontWeight={800}
@@ -304,14 +304,14 @@ export default function ToggleButtonParcel({
                           Total: {maskCurrency(parcel.total)}
                         </Typography>
                       </Box>
-                      <Box style={{ marginTop: "23px", marginRight: "22px" }}>
+                      <Box style={{ marginTop: '23px', marginRight: '22px' }}>
                         <Checkbox
                           icon={<CircleOutlinedBorder />}
                           checkedIcon={<CircleOutlinedIcon />}
                           checked={value == parcel.value.toString()}
                           style={{
                             color:
-                              value == parcel.value.toString() ? "" : "#E5E5E5",
+                              value == parcel.value.toString() ? '' : '#E5E5E5',
                           }}
                           color="success"
                         />
