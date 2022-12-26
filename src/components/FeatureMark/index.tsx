@@ -5,14 +5,12 @@ interface FeatureMarkProps {
   emoticon?: boolean;
   value?: number;
   firstParcel?: boolean;
-  message?: string;
 }
 
 export default function FeatureMark({
   emoticon,
   value,
   firstParcel,
-  message,
 }: FeatureMarkProps) {
   return (
     <Box
