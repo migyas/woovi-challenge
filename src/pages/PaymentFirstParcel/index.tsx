@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Accordion,
   AccordionDetails,
@@ -8,41 +7,33 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import { PixQRCode, PixQRCodeProps, PixParams } from 'pix-react';
+import { PixQRCode, PixQRCodeProps } from 'pix-react';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { maskCurrency } from '@/utils/maskCurrency';
 import { formatDate } from '@/utils/formatDate';
 import Timeline from '@/components/Timeline';
 import { mockParcelsRemaining } from '@/utils/mocks';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-const copyIcon = require('@/assets/icons/copy.svg') as string;
 
 export default function PaymentFirstParcel() {
-  const [editingParams] = useState<PixParams>({
+  const pixParams = {
     chave: '+5561993868323',
     cidade: 'Brasília',
     recebedor: 'Yan Dias',
-    valor: 13500,
+    valor: 15300,
     identificador: '12345',
     mensagem: 'Woovi challenge',
     cep: '71570812',
-  });
-  const { valor, ...pixParams } = editingParams;
-  const params: PixQRCodeProps = {
-    pixParams: {
-      ...pixParams,
-      valor: Number(valor) || 0,
-    },
-    size: 332,
   };
-  const { firstParcel } = {
-    firstParcel: 15300,
+  const params: PixQRCodeProps = {
+    pixParams,
+    size: 332,
   };
 
   return (
     <Grid>
       <header>
         <Typography variant="h1" align="center" mb="2rem">
-          João, pague a entrada de {maskCurrency(firstParcel)} pelo Pix
+          João, pague a entrada de {maskCurrency(15300)} pelo Pix
         </Typography>
       </header>
       <Grid
@@ -63,7 +54,7 @@ export default function PaymentFirstParcel() {
         </Grid>
         <Button
           style={{ margin: '20px 0', padding: '7px 26px 7px 20px' }}
-          endIcon={<img src={copyIcon} style={{ padding: 0 }} />}
+          endIcon={<img src="/assets/icons/copy.svg" style={{ padding: 0 }} />}
         >
           <Typography fontSize="1.8rem">Clique para copiar QR CODE</Typography>
         </Button>

@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -14,6 +15,12 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './public/index.html' }),
     new FaviconsWebpackPlugin({ logo: './public/assets/logo-favicon.svg' }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './public/assets', to: './assets' },
+        { from: './public/_redirects' },
+      ],
+    }),
   ],
   module: {
     rules: [

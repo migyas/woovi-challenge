@@ -13,6 +13,7 @@ import {
 } from '@mui/icons-material/';
 import { maskCurrency } from '@/utils/maskCurrency';
 import FeatureMark from '@/components/FeatureMark';
+import FirstToggleButton from './FirstToggleButton';
 
 interface ToggleButtonParcelProps {
   parcels: any[];
@@ -22,7 +23,7 @@ export default function ToggleButtonParcel({
   parcels,
 }: ToggleButtonParcelProps) {
   const [value, setValue] = useState('');
-  const parcelFirst = parcels[0];
+  const installmentFirst = parcels[0];
 
   function handleChooseParcel(value: string) {
     setValue(value);
@@ -32,118 +33,11 @@ export default function ToggleButtonParcel({
     <>
       {parcels.length > 0 && (
         <>
-          <div>
-            <ToggleButtonGroup
-              value={value}
-              exclusive
-              orientation="vertical"
-              onChange={(_, val) => handleChooseParcel(val)}
-              style={{ marginBottom: '34px', width: '429px' }}
-            >
-              {parcelFirst && (
-                <ToggleButton
-                  key={parcelFirst.id}
-                  value={parcelFirst.value}
-                  selected={value == parcelFirst.value.toString()}
-                  style={{ borderRadius: '10px' }}
-                >
-                  <Box
-                    style={{
-                      position: 'absolute',
-                      top: '-15px',
-                      left: '20px',
-                    }}
-                  >
-                    <Chip
-                      color="info"
-                      label={
-                        <Typography
-                          fontSize={18}
-                          textAlign="center"
-                          fontWeight={800}
-                          color="#4D4D4D"
-                          textTransform="capitalize"
-                        >
-                          Pix
-                        </Typography>
-                      }
-                    />
-                  </Box>
-                  <Box
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      height: '137px',
-                      maxWidth: '429px',
-                      width: '100%',
-                      gap: '7px',
-                      padding: '0 20px',
-                    }}
-                  >
-                    <Box
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                      }}
-                    >
-                      <Box
-                        style={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Box style={{ display: 'flex', gap: '5px' }}>
-                          <Typography
-                            fontSize={24}
-                            fontWeight={800}
-                            color="#4D4D4D"
-                          >
-                            {parcels[0].id}x
-                          </Typography>
-                          <Typography
-                            fontSize={24}
-                            fontWeight={600}
-                            color="#4D4D4D"
-                          >
-                            {maskCurrency(parcels[0].value)}
-                          </Typography>
-                        </Box>
-                        <Typography
-                          fontWeight={600}
-                          color="#03D69D"
-                          textAlign="start"
-                          textTransform="none"
-                        >
-                          Ganhe <strong>3%</strong> de Cashback
-                        </Typography>
-                      </Box>
-                      <Box>
-                        <Checkbox
-                          icon={<CircleOutlinedBorder />}
-                          checkedIcon={<CircleOutlinedIcon />}
-                          checked={value == parcelFirst.value.toString()}
-                          style={{
-                            color:
-                              value == parcelFirst.value.toString()
-                                ? ''
-                                : '#E5E5E5',
-                          }}
-                          color="success"
-                        />
-                      </Box>
-                    </Box>
-                    <FeatureMark
-                      firstParcel
-                      value={parcelFirst.value}
-                      emoticon
-                    />
-                  </Box>
-                </ToggleButton>
-              )}
-            </ToggleButtonGroup>
-          </div>
+          <FirstToggleButton
+            intallmentFirst={installmentFirst}
+            handleOnChange={handleChooseParcel}
+            value={value}
+          />
           <div>
             <ToggleButtonGroup
               exclusive

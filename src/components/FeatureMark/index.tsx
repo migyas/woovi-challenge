@@ -29,7 +29,7 @@ export default function FeatureMark({
         {emoticon && '🤑'}{' '}
         {firstParcel ? (
           <>
-            <strong>{maskCurrency(value! * 0.03) || 'R$ 0'}</strong> de volta no
+            <strong>{maskCurrency(value * 0.03) || 'R$ 0'}</strong> de volta no
             seu Pix na hora
           </>
         ) : (

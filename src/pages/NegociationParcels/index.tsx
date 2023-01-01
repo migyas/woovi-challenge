@@ -1,11 +1,8 @@
 import { Grid, Typography } from '@mui/material';
-import { useState } from 'react';
 import ToggleButtonParcel from '@/components/ToggleButtonParcel';
 import { mockParcels } from '@/utils/mocks';
 
 export default function NegociationParcels() {
-  const [parcels] = useState(mockParcels);
-
   return (
     <Grid>
       <header>
@@ -13,7 +10,7 @@ export default function NegociationParcels() {
           João, como você quer pagar?
         </Typography>
       </header>
-      <ToggleButtonParcel parcels={parcels} />
+      <ToggleButtonParcel parcels={mockParcels} />
     </Grid>
   );
 }

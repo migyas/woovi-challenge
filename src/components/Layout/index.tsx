@@ -1,17 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { Container, Grid, Typography } from '@mui/material';
-const logo = require('@/assets/icons/logo.svg') as string;
-const logoGray = require('@/assets/icons/logo-gray.svg') as string;
-const guard = require('@/assets/icons/guard.svg') as string;
 
 export default function Layout() {
   return (
     <Container maxWidth="sm">
-      <img src={logo} />
+      <img src="/assets/icons/logo.svg" />
       <Outlet />
       <footer>
         <Grid container justifyContent="start" alignItems="center" my="2.1rem">
-          <img src={guard} style={{ padding: '0 0 3px 0' }} />
+          <img src="/assets/icons/guard.svg" style={{ padding: '0 0 3px 0' }} />
           <Typography
             fontSize="1.4rem"
             fontWeight={600}
@@ -20,7 +17,10 @@ export default function Layout() {
           >
             Pagamento 100% seguro via:
           </Typography>
-          <img src={logoGray} style={{ padding: '0 0 3px 0' }} />
+          <img
+            src="/assets/icons/logo-gray.svg"
+            style={{ padding: '0 0 3px 0' }}
+          />
         </Grid>
       </footer>
     </Container>

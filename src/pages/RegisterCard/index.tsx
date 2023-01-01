@@ -5,22 +5,22 @@ import {
   Typography,
   Button,
   Select,
+  FormControl,
+  FormHelperText,
+  MenuItem,
+  InputLabel,
+  Divider,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from '@mui/material';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import { useForm, Controller } from 'react-hook-form';
 import { mask } from 'remask';
-import { mockParcelsCreditCard, mockParcelsRemaining } from '@/utils/mocks';
-import Divider from '@mui/material/Divider';
 import { maskCurrency } from '@/utils/maskCurrency';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Timeline from '@/components/Timeline';
+import { mockParcelsCreditCard } from '@/utils/mocks';
 import { formatDate } from '@/utils/formatDate';
-import AccordionDetails from '@mui/material/AccordionDetails/AccordionDetails';
 
 export default function RegisterCard() {
   const {

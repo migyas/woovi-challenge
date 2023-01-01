@@ -12,6 +12,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "paths": {
       "@/*": [
