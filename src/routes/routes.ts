@@ -10,7 +10,7 @@ export interface RouteConfig {
 export const routes: RouteConfig[] = [
   {
     path: '/',
-    element: lazy(() => import('@/pages/NegociationParcels')),
+    element: lazy(() => import('@/pages/NegociationInstallments')),
     useSuspenseLoader: true,
     isIndex: true,
   },

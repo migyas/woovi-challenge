@@ -17,17 +17,32 @@ export default function FeatureMark({
 }: FeatureMarkProps) {
   return (
     <Container>
-      <Typography fontSize={16} color="#ffffff">
-        {emoticon && '🤑'}{' '}
+      <Typography
+        fontSize={16}
+        color="#ffffff"
+        display="flex"
+        alignItems="center"
+      >
+        {emoticon && (
+          <img
+            src="/assets/icons/dollar-emoticon.png"
+            width={25}
+            height={25}
+            style={{ padding: '0 0.2rem 0 0' }}
+          />
+        )}
         {betterChoice && (
           <>
-            <strong>-3% de juros:</strong> Melhor opção de parcelamento
+            <strong style={{ paddingRight: '0.5rem' }}>-3% de juros:</strong>{' '}
+            Melhor opção de parcelamento
           </>
         )}
         {installmentFirst && (
           <>
-            <strong>{maskCurrency(value * 0.03) || 'R$ 0'}</strong> de volta no
-            seu Pix na hora
+            <strong style={{ paddingRight: '0.5rem' }}>
+              {maskCurrency(value * 0.03) || 'R$ 0'}
+            </strong>{' '}
+            de volta no seu Pix na hora
           </>
         )}
       </Typography>

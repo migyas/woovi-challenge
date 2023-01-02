@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import ToggleButtonInstallment from '@/components/ToggleButtonInstallment';
 import { mockInstallments } from '@/utils/mocks/installments';
 
-export default function NegociationParcels() {
+export default function NegociationInstallments() {
   return (
     <Grid>
       <header>
