@@ -9,12 +9,15 @@ const theme = createTheme({
       fontSize: '2.4rem',
       fontWeight: 800,
       lineHeight: '33px',
+      textAlign: 'center',
+      marginBottom: '2.8rem',
     },
   },
   palette: {
     info: {
       main: '#E5E5E5',
     },
+
     success: {
       main: '#03D69D',
     },
@@ -70,7 +73,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           background: '#133A6F',
-          color: '#ffffff',
+          color: '#ffffff !important',
           fontSize: '1.8rem',
           fontWeight: 600,
           height: '3.9rem',

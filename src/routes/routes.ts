@@ -15,8 +15,8 @@ export const routes: RouteConfig[] = [
     isIndex: true,
   },
   {
-    path: '/payment-parcel',
-    element: lazy(() => import('@/pages/PaymentFirstParcel')),
+    path: '/payment-installment',
+    element: lazy(() => import('@/pages/PaymentFirstInstallment')),
     useSuspenseLoader: true,
   },
   {

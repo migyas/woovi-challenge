@@ -19,8 +19,9 @@ import { mask } from 'remask';
 import { maskCurrency } from '@/utils/maskCurrency';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Timeline from '@/components/Timeline';
-import { mockParcelsCreditCard } from '@/utils/mocks';
+import { mockInstallmentsCreditCard } from '@/utils/mocks/installmentsCreditCard';
 import { formatDate } from '@/utils/formatDate';
+import { optionsInstallment } from '@/utils/mocks/optionsInstallment';
 
 export default function RegisterCard() {
   const {
@@ -33,12 +34,6 @@ export default function RegisterCard() {
     mode: 'onBlur',
     reValidateMode: 'onChange',
   });
-  const options = [
-    {
-      value: '15300',
-      label: '1x de R$ 15.300,00',
-    },
-  ];
 
   async function onSubmit(data: any) {
     console.log(data);
@@ -47,7 +42,7 @@ export default function RegisterCard() {
   return (
     <Grid>
       <header>
-        <Typography variant="h1" align="center" mb="2.8rem">
+        <Typography variant="h1">
           João, pague o restante em 1x no cartão
         </Typography>
         <Box component="form" onSubmit={handleSubmit(onSubmit)}>
@@ -127,7 +122,7 @@ export default function RegisterCard() {
                       {...field}
                       error={!!error}
                     >
-                      {options.map(option => (
+                      {optionsInstallment.map(option => (
                         <MenuItem key={option.value} value={option.value}>
                           {option.label}
                         </MenuItem>
@@ -148,17 +143,19 @@ export default function RegisterCard() {
               container
               flexDirection="column"
               alignItems="center"
-              style={{ padding: 0 }}
             >
-              <Typography style={{ color: '#B2B2B2', fontWeight: 600 }}>
+              <Typography color="#B2B2B2" fontWeight={600}>
                 Prazo de pagamento:
               </Typography>
-              <Typography style={{ color: '#4D4D4D', fontWeight: 800 }}>
+              <Typography fontWeight={800}>
                 {formatDate(new Date(), 'dd/MM/yyyy - hh:mm')}
               </Typography>
             </Grid>
             <Grid mb="2rem">
-              <Timeline items={mockParcelsCreditCard} paymentOtherInstallment />
+              <Timeline
+                items={mockInstallmentsCreditCard}
+                paymentOtherInstallment
+              />
             </Grid>
             <Divider flexItem />
             <Grid
@@ -211,10 +208,10 @@ export default function RegisterCard() {
               flexDirection="column"
               alignItems="center"
             >
-              <Typography style={{ color: '#B2B2B2', fontWeight: 600 }}>
+              <Typography color="#B2B2B2" fontWeight={600}>
                 Identificador:
               </Typography>
-              <Typography style={{ color: '#4D4D4D', fontWeight: 800 }}>
+              <Typography fontWeight={800}>
                 2c1b951f356c4680b13ba1c9fc889c47
               </Typography>
             </Grid>

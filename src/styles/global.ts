@@ -13,4 +13,8 @@ export const globalStyles = css`
     font-size: 62.5%;
     color: '#4D4D4D';
   }
+
+  img {
+    padding: 0;
+  }
 `;

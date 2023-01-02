@@ -1,4 +1,4 @@
-export const mockParcels = [
+export const mockInstallments = [
   {
     id: '1',
     value: 30500,
@@ -39,31 +39,5 @@ export const mockParcels = [
     value: 4542.85,
     total: 31800,
     betterChoice: false,
-  },
-];
-
-export const mockParcelsRemaining = [
-  {
-    id: '1',
-    value: 15300,
-    checked: false,
-  },
-  {
-    id: '2',
-    value: 15300,
-    checked: false,
-  },
-];
-
-export const mockParcelsCreditCard = [
-  {
-    id: '1',
-    value: 15300,
-    checked: true,
-  },
-  {
-    id: '2',
-    value: 15300,
-    checked: false,
   },
 ];
