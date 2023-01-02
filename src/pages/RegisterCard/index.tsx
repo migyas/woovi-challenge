@@ -158,7 +158,7 @@ export default function RegisterCard() {
               </Typography>
             </Grid>
             <Grid mb="2rem">
-              <Timeline items={mockParcelsCreditCard} />
+              <Timeline items={mockParcelsCreditCard} paymentOtherInstallment />
             </Grid>
             <Divider flexItem />
             <Grid

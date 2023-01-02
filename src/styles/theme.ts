@@ -4,11 +4,11 @@ const theme = createTheme({
   typography: {
     fontFamily: "'Nunito', sans-serif",
     htmlFontSize: 10,
+
     h1: {
       fontSize: '2.4rem',
       fontWeight: 800,
       lineHeight: '33px',
-      color: '#4D4D4D',
     },
   },
   palette: {
@@ -32,6 +32,7 @@ const theme = createTheme({
         root: {
           padding: 0,
           textTransform: 'none',
+          color: '#4D4D4D',
         },
       },
     },

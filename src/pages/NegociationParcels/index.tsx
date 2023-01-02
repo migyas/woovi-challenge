@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import ToggleButtonParcel from '@/components/ToggleButtonParcel';
+import ToggleButtonInstallment from '@/components/ToggleButtonInstallment';
 import { mockParcels } from '@/utils/mocks';
 
 export default function NegociationParcels() {
@@ -10,7 +10,7 @@ export default function NegociationParcels() {
           João, como você quer pagar?
         </Typography>
       </header>
-      <ToggleButtonParcel parcels={mockParcels} />
+      <ToggleButtonInstallment installments={mockParcels} />
     </Grid>
   );
 }

@@ -1,6 +1,15 @@
 import { Box, Grid, Typography } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { maskCurrency } from '@/utils/maskCurrency';
+import {
+  CheckedIcon,
+  Container,
+  DividerLine,
+  IconRoundedVariant,
+  IconsWrapper,
+  TextWrapper,
+  TypographyTimeline,
+} from './styled';
 
 interface ItemsProps {
   id: string;
@@ -10,9 +19,15 @@ interface ItemsProps {
 
 interface TimelineProps {
   items?: ItemsProps[];
+  firstInstallment?: boolean;
+  paymentOtherInstallment?: boolean;
 }
 
-export default function Timeline({ items }: TimelineProps) {
+export default function Timeline({
+  items,
+  firstInstallment,
+  paymentOtherInstallment,
+}: TimelineProps) {
   if (!items?.length) return;
   const lastItem = items.length - 1;
 
@@ -20,92 +35,36 @@ export default function Timeline({ items }: TimelineProps) {
     <>
       {items.map((item, i) => {
         return (
-          <Grid
-            key={item.id}
-            style={{
-              display: 'flex',
-              minWidth: '42.7rem',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Box style={{ display: 'flex', gap: '8px' }}>
-              <Box
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
+          <Container container key={item.id}>
+            <TextWrapper>
+              <IconsWrapper>
                 {item.checked ? (
-                  <Box
-                    style={{
-                      width: '16px',
-                      height: '16px',
-                      borderRadius: '50%',
-                      background: '#03D69D',
-                      position: 'relative',
-                    }}
-                  >
-                    <CheckRoundedIcon
-                      style={{
-                        position: 'absolute',
-                        left: '2px',
-                        top: '2px',
-                        fontSize: '12px',
-                        color: '#ffffff',
-                      }}
-                    />
-                  </Box>
+                  <CheckedIcon>
+                    <CheckRoundedIcon />
+                  </CheckedIcon>
                 ) : (
-                  <Box
-                    style={{
-                      width: '12px',
-                      height: '12px',
-                      borderRadius: '50%',
-                      border:
-                        item.checked || !(lastItem === i)
-                          ? '2px solid #03D69D'
-                          : '2px solid #E5E5E5',
-                    }}
+                  <IconRoundedVariant
+                    firstInstallment={firstInstallment}
+                    paymentOtherInstallment={paymentOtherInstallment}
+                    lastItem={lastItem === i}
                   />
                 )}
-                {!(lastItem === i) && (
-                  <Box
-                    style={{
-                      width: '2px',
-                      height: '24px',
-                      background: '#E5E5E5',
-                      position: 'relative',
-                    }}
-                  />
-                )}
-              </Box>
+                {!(lastItem === i) && <DividerLine />}
+              </IconsWrapper>
               {lastItem === i ? (
-                <Typography
-                  fontSize={18}
-                  fontWeight={600}
-                  style={{ marginTop: '-6px', color: '#4D4D4D' }}
-                >
-                  2ª no cartão
-                </Typography>
+                <TypographyTimeline>2ª no cartão</TypographyTimeline>
               ) : (
-                <Typography
-                  fontSize={18}
-                  fontWeight={600}
-                  style={{ marginTop: '-6px', color: '#4D4D4D' }}
-                >
-                  1ª entrada no Pix
-                </Typography>
+                <TypographyTimeline>1ª entrada no Pix</TypographyTimeline>
               )}
-            </Box>
+            </TextWrapper>
             <Typography
               fontSize={18}
               fontWeight={800}
-              style={{ marginTop: '-6px', color: '#4D4D4D' }}
+              style={{ marginTop: '-6px' }}
             >
               {maskCurrency(item.value)}
             </Typography>
-          </Grid>
+          </Container>
         );
       })}
     </>

@@ -72,8 +72,8 @@ export default function PaymentFirstParcel() {
             {formatDate(new Date(), 'dd/MM/yyyy - hh:mm')}
           </Typography>
         </Grid>
-        <Grid mb="2rem">
-          <Timeline items={mockParcelsRemaining} />
+        <Grid mb="2rem" width="100%">
+          <Timeline items={mockParcelsRemaining} firstInstallment />
         </Grid>
         <Divider flexItem />
         <Grid
