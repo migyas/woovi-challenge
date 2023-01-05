@@ -54,8 +54,8 @@ export default function ToggleButtonInstallment({
                     >
                       <InstallmentItem
                         installment={installment}
-                        value={value}
                         message={`Total: ${maskCurrency(installment.total)}`}
+                        value={value}
                         betterChoice
                       />
                     </ToggleButton>
