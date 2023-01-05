@@ -5,6 +5,7 @@ import { maskCurrency } from '@/utils/maskCurrency';
 import Checkbox from '@/components/Checkbox';
 import { Container, Content, HeaderWrapper, TitleWrapper } from './styled';
 import { InstallmentProps } from '..';
+import { Link } from 'react-router-dom';
 
 interface InstalllmentItemProps {
   installment: InstallmentProps;

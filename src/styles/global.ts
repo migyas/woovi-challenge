@@ -17,4 +17,10 @@ export const globalStyles = css`
   img {
     padding: 0;
   }
+
+  a {
+    text-decoration: none;
+    padding: 0;
+    display: inline-block;
+  }
 `;

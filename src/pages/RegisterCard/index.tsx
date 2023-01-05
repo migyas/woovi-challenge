@@ -134,7 +134,7 @@ export default function RegisterCard() {
                   </FormControl>
                 )}
               />
-              <Button type="submit" fullWidth>
+              <Button type="submit" fullWidth variant="contained">
                 Pagar
               </Button>
             </Grid>

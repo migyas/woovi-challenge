@@ -1,5 +1,16 @@
-import { AccordionSummary, Divider, Grid, Typography } from '@mui/material';
+import { useState } from 'react';
+import {
+  AccordionSummary,
+  Divider,
+  Grid,
+  Typography,
+  Button,
+  Popper,
+  Fade,
+  Paper,
+} from '@mui/material';
 import { PixQRCode, PixQRCodeProps } from 'pix-react';
+import { useNavigate } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { maskCurrency } from '@/utils/maskCurrency';
 import { formatDate } from '@/utils/formatDate';
@@ -12,8 +23,27 @@ import {
   DetailsAccordion,
   QRCodeWrapper,
 } from './styled';
+import { PopperPlacementType } from '@mui/material/Popper';
 
 export default function PaymentFirstInstallment() {
+  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [placement, setPlacement] = useState<PopperPlacementType>();
+  const navigate = useNavigate();
+
+  function handleClick(
+    newPlacement: PopperPlacementType,
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) {
+    setAnchorEl(event.currentTarget);
+    setOpen(prev => placement !== newPlacement || !prev);
+    setPlacement(newPlacement);
+
+    setTimeout(() => {
+      navigate('/register-card');
+    }, 5000);
+  }
+
   const params: PixQRCodeProps = {
     pixParams,
     size: 332,
@@ -21,6 +51,13 @@ export default function PaymentFirstInstallment() {
 
   return (
     <Grid>
+      <Button
+        variant="outlined"
+        style={{ position: 'absolute', top: '3.5rem' }}
+        onClick={() => navigate('/')}
+      >
+        Voltar
+      </Button>
       <header>
         <Typography variant="h1">
           João, pague a entrada de {maskCurrency(15300)} pelo Pix
@@ -35,11 +72,37 @@ export default function PaymentFirstInstallment() {
         <QRCodeWrapper>
           <PixQRCode {...params} />
         </QRCodeWrapper>
-        <ButtonCopyCode endIcon={<img src="/assets/icons/copy.svg" />}>
-          <Typography fontSize="1.8rem" color="#ffffff">
-            Clique para copiar QR CODE
-          </Typography>
-        </ButtonCopyCode>
+        <Grid>
+          <ButtonCopyCode
+            endIcon={<img src="/assets/icons/copy.svg" />}
+            variant="contained"
+            onClick={e => {
+              handleClick('top-end', e);
+              navigator.clipboard.writeText('código pix copiado com sucesso');
+            }}
+          >
+            <Typography fontSize="1.8rem" color="#ffffff">
+              Clique para copiar QR CODE
+            </Typography>
+          </ButtonCopyCode>
+          <Popper
+            open={open}
+            anchorEl={anchorEl}
+            placement={placement}
+            transition
+          >
+            {({ TransitionProps }) => (
+              <Fade {...TransitionProps} timeout={350}>
+                <Paper sx={{ background: '#1976d2' }}>
+                  <Typography sx={{ p: 1 }} color="#ffffff">
+                    Copiado!
+                  </Typography>
+                </Paper>
+              </Fade>
+            )}
+          </Popper>
+        </Grid>
+
         <Grid mb="2rem" container flexDirection="column" alignItems="center">
           <Typography color="#B2B2B2" fontWeight={600}>
             Prazo de pagamento:

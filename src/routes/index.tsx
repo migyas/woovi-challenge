@@ -17,14 +17,10 @@ export default function Routes() {
       <Route path="/" element={<Layout />}>
         <Route index element={<NegociationInstallments />} />
         <Route
-          path="/payment-installment"
+          path="payment-installment"
           element={<PaymentFirstInstallment />}
         />
-        <Route
-          path="/payment-installment"
-          element={<PaymentFirstInstallment />}
-        />
-        <Route path="/register-card" element={<RegisterCard />} />
+        <Route path="register-card" element={<RegisterCard />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Switch>

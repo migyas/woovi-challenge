@@ -71,7 +71,7 @@ const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
-        root: {
+        contained: {
           background: '#133A6F',
           color: '#ffffff !important',
           fontSize: '1.8rem',
@@ -86,6 +86,7 @@ const theme = createTheme({
             background: '#133A9F',
           },
         },
+        root: {},
       },
     },
     MuiToggleButton: {

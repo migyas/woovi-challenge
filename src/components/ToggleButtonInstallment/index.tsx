@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { maskCurrency } from '@/utils/maskCurrency';
 import Chip from '@/components/Chip';
@@ -14,17 +13,16 @@ export interface InstallmentProps {
 
 interface ToggleButtonInstallmentProps {
   installments: InstallmentProps[];
+  value?: string;
+  handleOnChange?: (value: string) => void;
 }
 
 export default function ToggleButtonInstallment({
   installments,
+  value,
+  handleOnChange,
 }: ToggleButtonInstallmentProps) {
-  const [value, setValue] = useState('');
   const installmentFirst = installments[0];
-
-  function handleChooseParcel(value: string) {
-    setValue(value);
-  }
 
   return (
     <>
@@ -32,7 +30,7 @@ export default function ToggleButtonInstallment({
         <>
           <FirstToggleButton
             installmentFirst={installmentFirst}
-            handleOnChange={handleChooseParcel}
+            handleOnChange={handleOnChange}
             value={value}
           />
           <div>
@@ -41,7 +39,7 @@ export default function ToggleButtonInstallment({
               value={value}
               orientation="vertical"
               style={{ marginBottom: '30px', width: '100%' }}
-              onChange={(_, val) => handleChooseParcel(val)}
+              onChange={(_, val) => handleOnChange(val)}
             >
               {installments.map(installment => {
                 if (installment.id === '1') {
