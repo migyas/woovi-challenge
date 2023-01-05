@@ -12,3 +12,30 @@ cd woovi-challenge
 ## Install dependecies
 
 Run `yarn`
+
+```shell
+yarn
+```
+
+## Start project
+
+Run `yarn dev`
+
+
+```shell
+yarn dev
+```
+
+## Husky install
+
+Run `yarn husky`
+
+```shell
+yarn husky
+```
+
+### Routes
+
+`/payment-installment`- QR Code screen for down payment in PIX
+
+`/register-card` - Screen to enter card details for payment of other installments
