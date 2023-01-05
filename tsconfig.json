@@ -10,14 +10,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "paths": {
       "@/*": [
-        "*"
-      ],
-    },
-    "allowJs": true,
-    "resolveJsonModule": true,
+        "./*"
+      ]
+    }
   },
   "exclude": [
     "node_modules"
