@@ -38,7 +38,7 @@ Run `yarn husky`
 yarn husky
 ```
 
-### Routes
+## Routes
 
 `/payment-installment`- QR Code screen for down payment in PIX
 
