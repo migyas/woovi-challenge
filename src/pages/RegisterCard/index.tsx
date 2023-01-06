@@ -22,6 +22,7 @@ import Timeline from '@/components/Timeline';
 import { mockInstallmentsCreditCard } from '@/utils/mocks/installmentsCreditCard';
 import { formatDate } from '@/utils/formatDate';
 import { optionsInstallment } from '@/utils/mocks/optionsInstallment';
+import { DetailsAccordion } from './styled';
 
 export default function RegisterCard() {
   const {
@@ -191,13 +192,13 @@ export default function RegisterCard() {
                     Como funciona?
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <DetailsAccordion>
                   <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Suspendisse malesuada lacus ex, sit amet blandit leo
                     lobortis eget.
                   </Typography>
-                </AccordionDetails>
+                </DetailsAccordion>
               </Accordion>
             </Grid>
             <Divider flexItem />

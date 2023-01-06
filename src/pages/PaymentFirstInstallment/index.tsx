@@ -38,10 +38,6 @@ export default function PaymentFirstInstallment() {
     setAnchorEl(event.currentTarget);
     setOpen(prev => placement !== newPlacement || !prev);
     setPlacement(newPlacement);
-
-    setTimeout(() => {
-      navigate('/register-card');
-    }, 5000);
   }
 
   const params: PixQRCodeProps = {
